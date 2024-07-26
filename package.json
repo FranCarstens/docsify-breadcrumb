@@ -1,0 +1,11 @@
+{
+  "name": "docsify-plugin-breadcrumbs",
+  "version": "1.0.0",
+  "description": "a basic breadcrumb generator for docsify",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "MIT"
+}
