@@ -8,6 +8,8 @@ import {
   generateAccessibleBreadcrumb
 } from './index'
 
+global.window.$docsify = {}
+
 describe('index.js', () => {
   describe('getPageTitle', () => {
     it('should get the title of the current page', () => {

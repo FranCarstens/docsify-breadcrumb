@@ -1,9 +1,13 @@
-const defaultOptions = {
-  showHome: true,
+const hasWindow = typeof window !== 'undefined'
+
+const options = {
+  showHome: false,
+  homeText: 'Home',
   separator: ' &rsaquo; ',
   casing: 'capitalize',
   linkColor: 'var(--theme-color, #42b983)',
-  size: 'small'
+  size: 'small',
+  ...(hasWindow && window.$docsify?.breadcrumb ? window.$docsify.breadcrumb : {})
 }
 
 /**
@@ -22,7 +26,7 @@ export function breadcrumbPlugin (hook, vm) {
 
     const urlParts = getUrlParts(url)
     const readableUrlParts = sanitizeUrlParts(urlParts)
-    const homeLink = defaultOptions.showHome || !isHome ? getHomeLink(isHome) : ''
+    const homeLink = options.showHome || !isHome ? getHomeLink(isHome) : ''
 
     const ul = generateAccessibleBreadcrumb(homeLink, getListItems(readableUrlParts, urlParts, title))
 
@@ -74,7 +78,7 @@ export const getListItems = (readableUrlParts, urlParts, title) => readableUrlPa
     const isLastLink = i === readableUrlParts.length - 1
 
     const itemDom = !isLastLink
-      ? `<li><a href=${link} style="color: ${defaultOptions.linkColor}">${part}</a>${defaultOptions.separator}</li>`
+      ? `<li><a href=${link} style="color: ${options.linkColor}">${part}</a>${options.separator}</li>`
       : `<li class="active" aria-current="page">${title}</li>`
 
     return acc + itemDom
@@ -96,11 +100,11 @@ export const getItemLink = (urlParts, end) => `#/${urlParts.slice(0, end).join('
  * @returns {String} The home link as a <li>
  */
 export const getHomeLink = (isHome) => {
-  const color = isHome ? 'inherit' : defaultOptions.linkColor
+  const color = isHome ? 'inherit' : options.linkColor
   const fontWeight = isHome ? `font-weight:inherit;` : ''
-  const separator = isHome ? '' : defaultOptions.separator
+  const separator = isHome ? '' : options.separator
 
-  return `<li><a href='#/' style="color: ${color}; ${fontWeight}}">Home</a>${separator}</li>`
+  return `<li><a href='#/' style="color: ${color}; ${fontWeight}}">${options.homeText}</a>${separator}</li>`
 }
 
 /**
@@ -113,8 +117,8 @@ export const getHomeLink = (isHome) => {
 export const generateAccessibleBreadcrumb = (homeLink, list) => `
   <nav aria-label="Breadcrumb" class="breadcrumb">
     <ol
-      class=' breadcrumb--${defaultOptions.size}'
-      style="text-transform:${defaultOptions.casing}"
+      class=' breadcrumb--${options.size}'
+      style="text-transform:${options.casing}"
     >
       ${homeLink}
       ${list}
@@ -122,8 +126,8 @@ export const generateAccessibleBreadcrumb = (homeLink, list) => `
   </nav>
 `
 
-if (typeof window !== 'undefined') {
-  window.$docsify["breadcrumb"] = { ...window.$docsify, breadcrumb: defaultOptions }
-
+if (hasWindow) {
+  window.$docsify = window.$docsify || {};
+  window.$docsify["breadcrumb"] = options
   window.$docsify.plugins = [].concat(breadcrumbPlugin, window.$docsify.plugins)
 }
