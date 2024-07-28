@@ -1,6 +1,6 @@
 # Docsify Breadcrumb
 
-<p style="text-align: center;">
+<p align="center">
   <img src="https://docsify.js.org/_media/icon.svg" />
   <br />
   <code>docsify-breadcrumb</code>
