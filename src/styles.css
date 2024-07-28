@@ -1,0 +1,29 @@
+ul.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+  font-size: 0.75em;
+  text-transform: capitalize;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li::after {
+  content: '\203A';
+  padding: 0 0.5em;
+}
+
+.breadcrumb li.active::after {
+  content: '';
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
