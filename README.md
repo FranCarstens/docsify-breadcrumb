@@ -70,3 +70,7 @@ You do not have to include options where you want to use the default values.:
   }
 </script>
 ```
+
+---
+
+Inspired by [the breadcrumb work](https://github.com/docsifyjs/docsify/issues/2016) of [Abhilash](https://github.com/abpanic)
