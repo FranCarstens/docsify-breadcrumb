@@ -1,6 +1,6 @@
 {
   "name": "docsify-breadcrumb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a basic breadcrumb generator for docsify",
   "main": "index.js",
   "scripts": {
