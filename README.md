@@ -18,7 +18,7 @@ The breadcrumb is represented by human readable parts of the url combined using 
 
 `/articles/books-and-more/adventure/`
 
-![Breadcrumb Example](./assets/example.png)
+![Breadcrumb Example](https://raw.githubusercontent.com/FranCarstens/docsify-breadcrumb/main/assets/example.png)
 
 
 ## Basic Usage
@@ -27,7 +27,7 @@ Add the following to your `index.html` below your Docsify script tag:
 
 ```html
 <!-- Adds the breadcrumb JavaScript -->
-<script async src="//cdn.jsdelivr.net/gh/FranCarstens/docsify-breadcrumb@latest/dist/index.min.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
 ```
 
 ## Add default styling
@@ -36,7 +36,7 @@ Add the following to your `index.html` just before the closing `</head>` tag:
 
 ```html
 <!-- Adds the default breadcrumb styling -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/FranCarstens/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
 ```
 
 ## Configuration
@@ -74,3 +74,5 @@ You do not have to include options where you want to use the default values.:
 ---
 
 Inspired by [the breadcrumb work](https://github.com/docsifyjs/docsify/issues/2016) of [Abhilash](https://github.com/abpanic)
+
+[![](https://data.jsdelivr.com/v1/package/npm/docsify-breadcrumb/badge)](https://www.jsdelivr.com/package/npm/docsify-breadcrumb)
