@@ -52,7 +52,7 @@ export const getPageTitle = (route, cacheTOC) =>
  * @sample articles/books-and-more/adventure.md => ['articles', 'books-and-more', 'adventure.md']
  */
 export const getUrlParts = (url) =>
-  url.split('/').filter(str => ['#', '', 'README'].indexOf(str) === -1)
+  decodeURI(url).split('/').filter(str => ['#', '', 'README'].indexOf(str) === -1)
 
 /**
  * Sanitize the URL parts
