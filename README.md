@@ -27,7 +27,7 @@ Add the following to your `index.html` below your Docsify script tag:
 
 ```html
 <!-- Adds the breadcrumb JavaScript -->
-<script async src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
 ```
 
 ## Add default styling
