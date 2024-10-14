@@ -30,6 +30,8 @@ export function breadcrumbPlugin (hook, vm) {
 
     const ul = generateAccessibleBreadcrumb(homeLink, getListItems(readableUrlParts, urlParts, title))
 
+    console.log(vm)
+
     next(ul + html)
   })
 }
