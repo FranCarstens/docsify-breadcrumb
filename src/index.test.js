@@ -30,6 +30,11 @@ describe('index.js', () => {
       const url = 'articles/books-and-more/adventure'
       expect(getUrlParts(url)).toEqual(['articles', 'books-and-more', 'adventure'])
     })
+
+    it('should get the decoded parts of the URL', () => {
+      const url = 'articles/books%20and%20more/adventure'
+      expect(getUrlParts(url)).toEqual(['articles', 'books and more', 'adventure'])
+    })
   })
 
   describe('sanitizeUrlParts', () => {
